@@ -1,5 +1,31 @@
-"scripts": {
-  "test": "playwright test",
-  "test:headed": "playwright test --headed",
-  "report": "allure generate allure-results -o allure-report --clean && allure open allure-report"
+{
+  "name": "e2e-automation-framework",
+  "version": "1.0.0",
+  "description": "End-to-end UI test framework for SauceDemo with Playwright and TypeScript: Page Object Model, cross-browser, accessibility and defect detection.",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --project=chromium --headed",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report",
+    "allure": "allure generate allure-results -o allure-report --clean && allure open allure-report"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "e2e",
+    "test-automation",
+    "page-object-model"
+  ],
+  "author": "MD. AL-AMIN",
+  "license": "ISC",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "allure-playwright": "^3.13.0",
+    "dotenv": "^16.6.1",
+    "typescript": "^5.9.3"
+  }
 }
